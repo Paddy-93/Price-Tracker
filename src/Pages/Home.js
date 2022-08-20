@@ -17,7 +17,6 @@ const Home = () => {
     }
 
     const renderTableHeader = () =>(
-        //console.log("RENDER HEADER")
         TABLE_HEADERS.map(header => (
             <th>{header}</th>
         ))
