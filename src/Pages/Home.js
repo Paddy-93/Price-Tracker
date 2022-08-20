@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import CoinTable from '../Components/CoinTable';
-
-const TABLE_HEADERS = ["Coin", "Current Price", "Market Cap", "24 Hour Change (%)"];
+import './Home.style.css'
 
 const Home = () => {
-
-
   return (
-    <div>
+    <div className='styledDiv' >
         <CoinTable/>
     </div>
   )
