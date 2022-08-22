@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { VictoryAxis,VictoryChart, VictoryLine } from 'victory';
+import { useParams } from 'react-router'
 
 const PriceChart = () => {
   const [coinData,setCoinData] = useState([]);
+  const { id } = useParams()
 
   useEffect(()=>{
     getCoinData()
-  },[])
+  },[id])
 
   const getCoinData = async() => {
-    const datePrices = await fetch("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=daily").then(results=>results.json());
+    const datePrices = await fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=30&interval=daily`).then(results=>results.json());
     console.log("HEREf "+ JSON.stringify(datePrices.prices));
 
       setCoinData(datePrices.prices.map((datePrice,idx) => {
