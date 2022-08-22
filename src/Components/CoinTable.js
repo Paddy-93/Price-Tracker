@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './CoinTable.style.css'
+import { Link } from 'react-router-dom';
 
 const TABLE_HEADERS = ["Coin", "Current Price", "Market Cap", "24 Hour Change (%)"];
 
@@ -18,14 +19,16 @@ const CoinTable = () => {
 
     const renderTableHeader = () =>(
         TABLE_HEADERS.map(header => (
-            <th>{header}</th>
+            <th key={header}>{header}</th>
         ))
     )
 
     const renderCoinsTable = () =>(
         coinList.map(coin => (
-            <tr key={coin.id} className>
-                <td><img src={coin.image} alt="Logo" width="20" height="20"/>{coin.name} ({coin.symbol}) </td>
+            <tr key={coin.id}>
+                <td><img src={coin.image} alt="Logo" width="20" height="20"/><Link to={`showchart/${coin.id}`}>
+                {coin.name} ({coin.symbol})
+                </Link> </td>
                 <td>{coin.current_price}</td>
                 <td>{coin.market_cap}</td>
                 <td style={coin.price_change_percentage_24h < 0 ? { color:"red" } : {color:"green"}}>{coin.price_change_percentage_24h}</td>
