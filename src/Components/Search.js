@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { StyledSearch } from './styled';
 
 const Search = () => {
     const [searchInput, setSearchInput] = useState("");
@@ -10,10 +11,11 @@ const Search = () => {
         setSearchInput(ev.target.value)
     }
   return (
-    <div>
-        <input onChange={handleSearchInputChange} type="input" value={searchInput}></input>
-        <button onClick={handleSubmit}>Search</button>
-    </div>
+    <StyledSearch>
+        <input id="search-input" onChange={handleSearchInputChange} type="input" value={searchInput}></input>
+        <div><button onClick={handleSubmit}>Search</button></div>
+        
+    </StyledSearch>
   )
 }
 

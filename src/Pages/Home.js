@@ -6,8 +6,8 @@ import './Home.style.css'
 const Home = () => {
   return (
     <div className='styledDiv' >
-        <CoinTable/>
         <Search/>
+        <CoinTable/>    
     </div>
   )
 }

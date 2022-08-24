@@ -23,3 +23,12 @@
     background-color: #074f6a;
     color: white;
   }
+
+  a:link { 
+    text-decoration: none;
+    color: black;
+}
+
+  a:visited {
+    color:black;
+  }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { StyledNav } from './styled';
 
 const Navbar = () => {
     const LINKS = [
@@ -7,13 +8,13 @@ const Navbar = () => {
         {to:"/favorites", text: "Favorites"}
     ];
   return (
-    <div>
+    <StyledNav>
         {
             LINKS.map(link => (
                 <Link to={link.to} style={{marginLeft:"2%"}}>{link.text}</Link>
             ))
         }
-    </div>
+    </StyledNav>
   )
 }
 

@@ -26,7 +26,7 @@ const CoinTable = () => {
     const renderCoinsTable = () =>(
         coinList.map(coin => (
             <tr key={coin.id}>
-                <td><img src={coin.image} alt="Logo" width="20" height="20"/><Link to={`showchart/${coin.id}`}>
+                <td><img src={coin.image} alt="Logo" width="20" height="20"/><Link to={`displayinfo/${coin.id}`}>
                 {coin.name} ({coin.symbol})
                 </Link> </td>
                 <td>{coin.current_price}</td>
